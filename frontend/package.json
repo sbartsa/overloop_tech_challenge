@@ -1,0 +1,61 @@
+{
+    "name": "tech-test-frontend",
+    "version": "1.0.0",
+    "private": true,
+    "cypress-cucumber-preprocessor": {
+        "step_definitions": "cypress/integration/**",
+        "cypress-cucumber-preprocessor": {
+            "nonGlobalStepDefinitions": true
+        },
+        "cucumberJson": {
+            "generate": true,
+            "outputFolder": "cypress/cucumber-json",
+            "filePrefix": "",
+            "fileSuffix": ".cucumber"
+        }
+    },
+    "engines": {
+        "node": "^12.8.3"
+    },
+    "dependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "axios": "^0.19.2",
+        "bootstrap": "^4.5.2",
+        "cypress": "^9.6.0",
+        "cypress-cucumber-preprocessor": "^4.3.1",
+        "multiple-cucumber-html-reporter": "^1.20.0",
+        "react": "^16.13.1",
+        "react-bootstrap": "^1.3.0",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.2",
+        "react-widgets": "^4.5.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "cypress:test": "cypress open cypress/integration/tests.js",
+        "ct": "cypress open cypress/integration/tests.js",
+        "e2e": "npx cypress run --browser chrome cypress/integration/tests.js && node cucumber-html-report.js && open ./reports/cucumber-htmlreport.html/index.html",
+        "reseed": "yarn --cwd ../backend/ seed"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
